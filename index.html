@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unheilig Official Store</title>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+(function(){
+emailjs.init("service_lxiogfo");
+})();
+</script>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Arial', sans-serif;
+background: #f5f5dc;
+color: #000;
+}
+header {
+background: #f5f5dc;
+padding: 1rem;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+border-bottom: 3px solid #c41e3a;
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1400px;
+margin: 0 auto;
+}
+.logo {
+font-size: 2rem;
+font-weight: bold;
+letter-spacing: 3px;
+color: #000;
+}
+.nav-links {
+display: flex;
+gap: 2rem;
+list-style: none;
+}
+.nav-links a {
+color: #000;
+text-decoration: none;
+transition: color 0.3s;
+font-size: 0.9rem;
+font-weight: bold;
+}
+.nav-links a:hover {
+color: #c41e3a;
+}
+.hero {
+height: 60vh;
+background: url('https://i.ibb.co/4nBXytRq/Whats-App-Image-2026-02-14-at-15-31-39.jpg') center/cover;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
+}
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0,0,0,0.5);
+}
+.hero-content {
+position: relative;
+z-index: 1;
+}
+.hero h1 {
+font-size: 3rem;
+margin-bottom: 1rem;
+}
+/* Balloon Headers - Responsive */
+.balloon-header {
+text-align: center;
+margin-bottom: 2rem;
+padding: 1rem 0;
+}
+.balloon-header img {
+max-width: min(400px, 90vw);
+height: auto;
+margin: 0 auto;
+display: block;
+filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+.balloon-text {
+font-size: clamp(2rem, 6vw, 4rem);
+color: #c41e3a;
+font-weight: bold;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+margin: 1rem 0;
+}
+.balloon-instruction {
+text-align: center;
+color: #666;
+font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+font-style: italic;
+margin-top: 0.5rem;
+}
+.section {
+padding: clamp(1rem, 3vw, 4rem) clamp(0.5rem, 2vw, 2rem);
+max-width: 1400px;
+margin: 0 auto;
+}
+/* Scrollable Grid Layout */
+.merch-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 2rem;
+max-height: 800px;
+overflow-y: auto;
+padding: 1rem;
+scrollbar-width: thin;
+scrollbar-color: #c41e3a #1a1a1a;
+}
+.merch-grid::-webkit-scrollbar {
+width: 8px;
+}
+.merch-grid::-webkit-scrollbar-track {
+background: #1a1a1a;
+}
+.merch-grid::-webkit-scrollbar-thumb {
+background: #c41e3a;
+border-radius: 4px;
+}
+.merch-card {
+background: #f5f5dc;
+border: 3px solid #000;
+border-radius: 0;
+overflow: hidden;
+transition: transform 0.3s;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.merch-card:hover {
+transform: translateY(-5px);
+}
+.merch-image {
+width: 100%;
+height: 350px;
+object-fit: cover;
+background: #f5f5dc;
+}
+.merch-info {
+padding: 1.5rem;
+text-align: center;
+}
+.merch-category {
+color: #c41e3a;
+font-weight: bold;
+font-size: 0.9rem;
+text-transform: uppercase;
+letter-spacing: 1px;margin-bottom: 0.5rem;
+}
+.merch-title {
+color: #000;
+font-size: 1.1rem;
+margin-bottom: 1rem;
+font-weight: normal;
+}
+.merch-price {
+color: #000;
+font-size: 1.5rem;
+font-weight: bold;
+margin-bottom: 1rem;
+}
+.btn-view {
+background: transparent;
+border: 2px solid #c41e3a;
+color: #c41e3a;
+padding: 0.8rem 2rem;
+text-transform: uppercase;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+letter-spacing: 1px;
+}
+.btn-view:hover {
+background: #c41e3a;
+color: #fff;
+}
+/* Quantity Controls */
+.quantity-control {
+background: #fff;
+padding: 1rem;
+margin: 1rem 0;
+}
+.quantity-input {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+}
+.quantity-btn {
+background: #c41e3a;
+color: #fff;
+border: none;
+width: 30px;
+height: 30px;
+cursor: pointer;
+font-size: 1.2rem;
+}
+.quantity-number {
+color: #000;
+font-weight: bold;
+min-width: 30px;
+text-align: center;
+}
+.btn-buy {
+background: #c41e3a;
+color: #fff;
+border: none;
+padding: 0.8rem 2rem;
+text-transform: uppercase;
+font-weight: bold;
+cursor: pointer;
+width: 100%;
+margin-top: 1rem;
+transition: background 0.3s;
+}
+.btn-buy:hover {
+background: #a01729;
+}
+/* Tickets Section */
+.tickets-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+margin-top: 2rem;
+}
+.ticket-card {
+background: #fff;
+color: #000;
+padding: 2rem;
+border-radius: 10px;
+text-align: center;
+}
+.ticket-card h3 {
+color: #c41e3a;
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+.ticket-price {
+font-size: 2.5rem;
+font-weight: bold;
+margin: 1rem 0;
+}
+.ticket-features {
+list-style: none;
+margin: 1.5rem 0;
+text-align: left;
+}
+.ticket-features li {
+padding: 0.5rem 0;
+border-bottom: 1px solid #eee;
+}
+/* Concerts Section */
+.concert-card {
+background: #fff;
+color: #000;
+padding: 1.5rem;
+margin-bottom: 1rem;
+border-radius: 5px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.concert-info h3 {
+color: #c41e3a;
+margin-bottom: 0.5rem;
+}
+/* Footer */
+footer {
+background: #000;
+padding: 3rem 2rem;
+margin-top: 4rem;
+}
+.footer-content {
+max-width: 1400px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+}
+.footer-section h4 {
+color: #c41e3a;
+margin-bottom: 1rem;
+}
+.footer-section ul {
+list-style: none;
+}
+.footer-section a {
+color: #fff;
+text-decoration: none;
+display: block;
+padding: 0.3rem 0;
+}
+.footer-bottom {
+text-align: center;
+margin-top: 2rem;
+padding-top: 2rem;
+border-top: 1px solid #333;
+}
+/* Modal Styles */
+.modal {
+display: none;
+position: fixed;
+z-index: 2000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.8);
+overflow: auto;
+}
+.modal-content {
+background: #f5f5dc;
+color: #000;
+margin: 3% auto;
+padding: 2rem;
+border-radius: 10px;
+max-width: 600px;
+position: relative;
+border: 3px solid #000;
+max-height: 90vh;
+overflow-y: auto;
+}
+.modal-close {
+position: absolute;
+top: 1rem;
+right: 1rem;
+font-size: 2rem;
+cursor: pointer;
+color: #000;
+background: none;
+border: none;
+}
+.modal-title {
+color: #c41e3a;
+font-size: 1.8rem;
+margin-bottom: 1.5rem;
+text-align: center;
+}
+.size-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1rem;
+margin: 2rem 0;
+}
+.size-btn {
+padding: 1rem;
+border: 2px solid #ddd;
+background: #fff;
+cursor: pointer;
+font-size: 1rem;
+font-weight: bold;
+transition: all 0.3s;
+}
+.size-btn:hover, .size-btn.selected {
+border-color: #c41e3a;
+background: #c41e3a;
+color: #fff;
+}
+.form-group {
+margin-bottom: 1.5rem;
+}
+.form-group label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: bold;
+}
+.form-group input,
+.form-group select {
+width: 100%;
+padding: 0.8rem;
+border: 2px solid #ddd;
+border-radius: 5px;
+font-size: 1rem;
+}
+/* Radio button styling */
+input[type="radio"] {
+cursor: pointer;
+accent-color: #c41e3a;
+}
+input[type="radio"]:checked + div strong {
+color: #c41e3a;
+}
+label:has(input[type="radio"]:checked) {
+border-color: #c41e3a !important;
+background: #fff5f5 !important;
+}
+.shipping-table {
+width: 100%;
+border-collapse: collapse;
+margin: 1rem 0;
+}
+.shipping-table th,
+.shipping-table td {
+border: 1px solid #ddd;
+padding: 0.8rem;
+text-align: left;
+}
+.shipping-table th {
+background: #c41e3a;
+color: #fff;
+}
+.order-summary {
+background: #f5f5f5;
+padding: 1rem;
+margin: 1rem 0;
+border-radius: 5px;
+}
+/* Responsive Breakpoints */
+@media (max-width: 480px) {
+/* Phone */
+.logo {
+font-size: 1.3rem;
+}
+.nav-links {
+flex-direction: column;
+gap: 0.5rem;
+font-size: 0.85rem;
+}
+.merch-grid {
+grid-template-columns: 1fr !important;
+max-height: 70vh;
+gap: 1rem;
+}
+.merch-image {
+height: 250px;
+}
+.tickets-grid {
+grid-template-columns: 1fr;
+}
+.balloon-text {
+font-size: 2rem;
+}
+}
+@media (min-width: 481px) and (max-width: 768px) {
+/* Tablet Portrait */
+.logo {
+font-size: 1.6rem;
+}
+.nav-links {
+gap: 1rem;
+font-size: 0.85rem;
+}
+.merch-grid {
+grid-template-columns: repeat(2, 1fr);
+max-height: 75vh;
+}
+.merch-image {
+height: 280px;
+}
+.balloon-text {
+font-size: 2.5rem;
+}
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+/* Tablet Landscape */
+.merch-grid {
+grid-template-columns: repeat(2, 1fr);
+max-height: 80vh;
+}
+.merch-image {
+height: 300px;
+}
+.balloon-text {
+font-size: 3rem;
+}
+}
+@media (min-width: 1025px) and (max-width: 1400px) {
+/* Small Laptop */
+.merch-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+.merch-image {
+height: 320px;
+}
+}
+@media (min-width: 1401px) {
+/* Large Desktop */
+.merch-grid {
+grid-template-columns: repeat(4, 1fr);
+}
+.merch-image {
+height: 350px;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">UNHEILIG</div>
+<ul class="nav-links">
+<li><a href="#shop">Shop</a></li>
+<li><a href="#featured">Featured</a></li>
+<li><a href="#bundle">Bundles</a></li>
+<li><a href="#tickets">Tickets</a></li>
+<li><a href="#concerts">Konzerte</a></li>
+<li><a href="#meetgreet">Meet & Greet</a></li>
+</ul>
+</nav>
+</header>
+<section class="hero">
+<div class="hero-content">
+<h1>UNHEILIG COMEBACK TOUR 2026</h1>
+<p>Das Comeback - Wieder Zurück</p>
+</div>
+</section>
+<section id="shop" class="section">
+<div class="balloon-header">
+<!-- TO ADD BALLOON IMAGE: Upload Screenshot_20260222-105253_Samsung_Internet.jpg to https://imgbb.com
+Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Musik" style="max-width: min(400px, 90vw); height: auto;"> -->
+<h2 class="balloon-text">Musik</h2>
+<p class="balloon-instruction">📸 Add balloon image here: Upload to imgbb.com</p>
+</div>
+<div class="merch-grid">
+<!-- Product 1 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/BVmVWsg1/Whats-App-Image-2026-02-22-at-16-52-52.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">T-Shirts</div>
+<div class="merch-price">€34,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/1YsB9hjS/Whats-App-Image-2026-02-22-at-16-52-52-1.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Hoodie</div>
+<div class="merch-price">€54,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/Pz9HcK76/Whats-App-Image-2026-02-22-at-16-52-51.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Limited Edition Shirt</div>
+<div class="merch-price">€39,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/6ctj6q6d/Whats-App-Image-2026-02-22-at-16-52-51-1.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Tour Shirt 2026</div>
+<div class="merch-price">€34,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/0V6mmtTd/Whats-App-Image-2026-02-22-at-16-52-50.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Band Logo Shirt</div>
+<div class="merch-price">€34,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/8n5kTpKr/Whats-App-Image-2026-02-22-at-16-52-50-2.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Vintage Shirt</div>
+<div class="merch-price">€36,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 7 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/k2WSRgg0/Whats-App-Image-2026-02-22-at-16-52-50-1.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Classic Merch</div>
+<div class="merch-price">€34,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 8 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/27MvTZkj/Whats-App-Image-2026-02-22-at-16-52-49.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Special Edition</div>
+<div class="merch-price">€39,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 9 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/PLMH17z/Whats-App-Image-2026-02-22-at-16-52-49-1.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Tour Design Shirt</div>
+<div class="merch-price">€34,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 10 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/PGD2PM6f/Whats-App-Image-2026-02-22-at-16-52-48.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Album Cover Shirt</div>
+<div class="merch-price">€36,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Product 11 -->
+<div class="merch-card">
+<img src="https://i.ibb.co/zhN9tDsN/Whats-App-Image-2026-02-22-at-16-52-48-1.jpg" alt="Merchandise" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">COMEBACK</div>
+<div class="merch-title">Collector's Edition</div>
+<div class="merch-price">€44,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<!-- Original Products -->
+<div class="merch-card">
+<img src="https://i.ibb.co/BVj5JcQF/t-shirt.jpg" alt="Der Graf Tour T-Shirt" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">TOUR</div>
+<div class="merch-title">Der Graf Tour T-Shirt</div>
+<div class="merch-price">€29,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<div class="merch-card">
+<img src="https://i.ibb.co/67YJ9t2g/Lichtgestalten-Hoodie.jpg" alt="Lichtgestalten Hoodie" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">HOODIE</div>
+<div class="merch-title">Lichtgestalten Hoodie</div>
+<div class="merch-price">€54,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<div class="merch-card">
+<img src="https://i.ibb.co/prsB571G/Whats-App-Image-2026-02-07-at-00-00-51.jpg" alt="Tour 2026 Poster" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">POSTER</div>
+<div class="merch-title">Tour 2026 Poster</div>
+<div class="merch-price">€19,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<div class="merch-card">
+<img src="https://i.ibb.co/q3V6Xmvq/Whats-App-Image-2026-02-07-at-00-00-51-1.jpg" alt="Grosse Freiheit Deluxe Edition" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">CD</div>
+<div class="merch-title">Grosse Freiheit Deluxe Edition</div>
+<div class="merch-price">€16,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<div class="merch-card">
+<img src="https://i.ibb.co/0ym62RKj/Whats-App-Image-2026-02-07-at-00-00-52-1.jpg" alt="Collector's Bundle Signiert" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">BUNDLE</div>
+<div class="merch-title">Collector's Bundle Signiert</div>
+<div class="merch-price">€99,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+<div class="merch-card">
+<img src="https://i.ibb.co/MDmTgCbz/Whats-App-Image-2026-02-07-at-00-00-52.jpg" alt="Best of Unheilig Vinyl Box" class="merch-image">
+<div class="merch-info">
+<div class="merch-category">VINYL</div>
+<div class="merch-title">Best of Unheilig Vinyl Box</div>
+<div class="merch-price">€79,99</div>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Kaufen</button>
+</div>
+<button class="btn-view">PRODUKT ANSEHEN</button>
+</div>
+</div>
+</div>
+</section>
+<section id="tickets" class="section">
+<div class="balloon-header">
+<!-- TO ADD BALLOON IMAGE: Upload Screenshot_20260222-105323_Samsung_Internet.jpg to https://imgbb.com
+Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Ticket Bundle" style="max-width: min(400px, 90vw); height: auto;"> -->
+<h2 class="balloon-text">Ticket Bundle</h2>
+<p class="balloon-instruction">📸 Add balloon image here: Upload to imgbb.com</p>
+</div>
+<div class="tickets-grid">
+<div class="ticket-card">
+<h3>Standard</h3>
+<div class="ticket-price">€59,00</div>
+<ul class="ticket-features">
+<li>General Admission</li>
+<li>Concert Program</li>
+</ul>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Buchen</button>
+</div>
+</div>
+<div class="ticket-card">
+<h3>VIP</h3>
+<div class="ticket-price">€149,00</div>
+<ul class="ticket-features">
+<li>Priority Entry</li>
+<li>Premium Seating</li>
+<li>Exclusive Merchandise</li>
+<li>Signed Program</li>
+<li>VIP Laminate</li>
+</ul>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Buchen</button>
+</div>
+</div>
+<div class="ticket-card">
+<h3>Backstage Pass</h3>
+<div class="ticket-price">€299,00</div>
+<ul class="ticket-features">
+<li>All VIP Benefits</li>
+<li>Backstage Tour</li>
+<li>Soundcheck Access</li>
+<li>Meet & Greet</li>
+<li>Photo Opportunity</li>
+<li>Limited Edition Merch</li>
+</ul>
+<div class="quantity-control">
+<div class="quantity-input">
+<button class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button class="quantity-btn">+</button>
+</div>
+<button class="btn-buy">Jetzt Buchen</button>
+</div>
+</div>
+</div>
+</section>
+<section id="concerts" class="section">
+<h2 class="section-title">Konzerte 2026</h2>
+<div class="concert-card">
+<div class="concert-info">
+<h3>15. März 2026</h3>
+<p>Berlin - Mercedes-Benz Arena</p>
+<p>20:00 Uhr</p>
+</div>
+<button class="btn-view">Tickets Kaufen</button>
+</div>
+<div class="concert-card">
+<div class="concert-info">
+<h3>20. März 2026</h3>
+<p>München - Olympiahalle</p>
+<p>20:00 Uhr</p>
+</div>
+<button class="btn-view">Tickets Kaufen</button>
+</div>
+<div class="concert-card">
+<div class="concert-info">
+<h3>25. März 2026</h3>
+<p>Hamburg - Barclays Arena</p>
+<p>20:00 Uhr</p>
+</div>
+<button class="btn-view">Tickets Kaufen</button>
+</div>
+<div class="concert-card">
+<div class="concert-info">
+<h3>1. April 2026</h3>
+<p>Köln - Lanxess Arena</p>
+<p>20:00 Uhr</p>
+</div>
+<button class="btn-view">Tickets Kaufen</button>
+</div>
+<div class="concert-card">
+<div class="concert-info">
+<h3>5. April 2026</h3>
+<p>Frankfurt - Festhalle</p>
+<p>20:00 Uhr</p>
+</div>
+<button class="btn-view">Tickets Kaufen</button>
+</div>
+<div class="concert-card">
+<div class="concert-info">
+<h3>10. April 2026</h3>
+<p>Stuttgart - Schleyerhalle</p>
+<p>20:00 Uhr</p>
+</div>
+<button class="btn-view">Tickets Kaufen</button>
+</div>
+</section>
+<!-- ===== FEATURED PRODUCTS CAROUSEL ===== -->
+<section id="featured" style="background: #f5f5dc; padding: 3rem 0; margin: 2rem 0;">
+<div style="max-width: 1400px; margin: 0 auto; padding: 0 1rem;">
+<h2 style="text-align: center; font-size: clamp(2rem, 5vw, 3rem); color: #c41e3a; margin-bottom: 2rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Featured Products</h2>
+<div style="display: flex; gap: 2rem; overflow-x: auto; padding: 2rem 0.5rem; scrollbar-width: thin; scrollbar-color: #c41e3a #f5f5dc; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+<!-- Featured 1: Vinyl Box -->
+<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
+<img src="https://i.ibb.co/MDmTgCbz/Whats-App-Image-2026-02-07-at-00-00-52.jpg" alt="Vinyl Box" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+<div style="padding: 1.5rem; background: #f5f5dc;">
+<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Best of Unheilig Vinyl Box</h3>
+<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€79,99</p>
+<div style="background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #c41e3a;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">-</button>
+<span class="quantity-number" style="font-weight: bold; font-size: 1.2rem; min-width: 30px; text-align: center;">1</span>
+<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">+</button>
+</div>
+</div>
+<button class="btn-buy" style="width: 100%; padding: 0.8rem; background: #c41e3a; color: #fff; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; font-size: 1rem;">Jetzt Kaufen</button>
+</div>
+</div>
+<!-- Featured 2: CD Bundle -->
+<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
+<img src="https://i.ibb.co/KxtxfFBV/bundel.jpg" alt="CD Bundle" style="width: 100%; height: 350px; object-fit: cover; display: block;"><div style="padding: 1.5rem; background: #f5f5dc;">
+<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">CD + 2 Tickets Bundle</h3>
+<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€195,99</p>
+<p style="color: #c41e3a; font-weight: bold; text-align: center; margin: 0.5rem 0; font-size: 1.1rem;">Leider ausverkauft</p>
+<p style="font-size: 0.9rem; text-align: center; margin-top: 1rem; line-height: 1.4;">LIEBE GLAUBE MONSTER<br>CD + 2 TICKETS</p>
+</div>
+</div>
+<!-- Featured 3 -->
+<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
+<img src="https://i.ibb.co/60gY88HF/Whats-App-Image-2026-02-22-at-23-30-46-1.jpg" alt="Special Edition" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+<div style="padding: 1.5rem; background: #f5f5dc;">
+<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Special Edition</h3>
+<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€49,99</p>
+<div style="background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #c41e3a;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">-</button>
+<span class="quantity-number" style="font-weight: bold; font-size: 1.2rem; min-width: 30px; text-align: center;">1</span>
+<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">+</button>
+</div>
+</div>
+<button class="btn-buy" style="width: 100%; padding: 0.8rem; background: #c41e3a; color: #fff; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; font-size: 1rem;">Jetzt Kaufen</button>
+</div>
+</div>
+<!-- Featured 4 -->
+<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
+<img src="https://i.ibb.co/203HPD06/Whats-App-Image-2026-02-22-at-23-30-46.jpg" alt="Limited Edition" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+<div style="padding: 1.5rem; background: #f5f5dc;">
+<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Limited Edition</h3>
+<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€39,99</p>
+<div style="background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #c41e3a;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">-</button>
+<span class="quantity-number" style="font-weight: bold; font-size: 1.2rem; min-width: 30px; text-align: center;">1</span>
+<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">+</button>
+</div>
+</div>
+<button class="btn-buy" style="width: 100%; padding: 0.8rem; background: #c41e3a; color: #fff; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; font-size: 1rem;">Jetzt Kaufen</button>
+</div>
+</div>
+<!-- Featured 5 -->
+<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
+<img src="https://i.ibb.co/CpSFHg64/Whats-App-Image-2026-02-22-at-23-30-45.jpg" alt="Exclusive Package" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+<div style="padding: 1.5rem; background: #f5f5dc;">
+<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Exclusive Package</h3>
+<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€59,99</p>
+<div style="background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #c41e3a;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">-</button>
+<span class="quantity-number" style="font-weight: bold; font-size: 1.2rem; min-width: 30px; text-align: center;">1</span>
+<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">+</button>
+</div>
+</div>
+<button class="btn-buy" style="width: 100%; padding: 0.8rem; background: #c41e3a; color: #fff; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; font-size: 1rem;">Jetzt Kaufen</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== END FEATURED PRODUCTS ===== -->
+<section id="bundle" class="section">
+<div class="balloon-header">
+<!-- TO ADD BALLOON IMAGE: Upload Screenshot_20260222-105310_Samsung_Internet.jpg to https://imgbb.com
+Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Merch Bundle" style="max-width: min(400px, 90vw); height: auto;"> -->
+<h2 class="balloon-text">Merch Bundle</h2>
+<p class="balloon-instruction">📸 Add balloon image here: Upload to imgbb.com</p>
+</div>
+<div style="background: #fff; color: #000; padding: 2rem; border-radius: 10px; max-width: 800px; margin: 0 auto; border: 3px solid #000;">
+<h3 style="text-align: center; color: #c41e3a; margin-bottom: 1rem;">Vorbestellbar</h3>
+<img src="https://i.ibb.co/KxtxfFBV/bundel.jpg" alt="Bundle" style="width: 100%; max-width: 400px; display: block; margin: 2rem auto;">
+<div style="margin: 2rem 0;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Stadt/Datum wählen...</label>
+<select style="width: 100%; padding: 0.8rem; border: 2px solid #c41e3a; border-radius: 5px; font-size: 1rem;">
+<option>14.11.26 - Bremen</option>
+<option>15.11.26 - Hamburg</option>
+<option>16.11.26 - Berlin</option>
+<option>20.11.26 - München</option>
+<option>21.11.26 - Stuttgart</option>
+<option>22.11.26 - Frankfurt</option>
+<option>23.11.26 - Köln</option>
+</select>
+</div>
+<div style="text-align: center; margin: 2rem 0;">
+<p style="color: #c41e3a; font-weight: bold; font-size: 1.2rem;">Leider ausverkauft</p>
+<p style="font-size: 2rem; font-weight: bold; margin: 1rem 0;">€195,99</p>
+<p style="font-size: 1.2rem; margin-top: 1rem;">LIEBE GLAUBE MONSTER<br>CD + 2 TICKETS BUNDLE</p>
+</div>
+</div>
+</section>
+<section id="meetgreet" class="section">
+<h2 class="section-title">Meet & Greet</h2>
+<div style="background: #fff; color: #000; padding: 2rem; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+<form id="meetgreetForm">
+<!-- Customer Information Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 2rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Ihre Daten:</h4>
+<div style="margin-bottom: 1.5rem;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Vorname *</label>
+<input type="text" name="firstname" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem;">
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Nachname *</label>
+<input type="text" name="lastname" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem;">
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">E-Mail *</label>
+<input type="email" name="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem;">
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Telefon *</label>
+<input type="tel" name="phone" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem;">
+</div>
+</div>
+<!-- Event Details Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 2rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Event Details:</h4>
+<div style="margin-bottom: 1.5rem;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Tour Datum *</label>
+<select name="tour_date" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem;">
+<option value="">Bitte wählen...</option>
+<option>15. März 2026 - Berlin</option>
+<option>20. März 2026 - München</option>
+<option>25. März 2026 - Hamburg</option>
+<option>1. April 2026 - Köln</option>
+<option>5. April 2026 - Frankfurt</option>
+<option>10. April 2026 - Stuttgart</option>
+</select>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Anzahl Personen</label>
+<div class="quantity-input" style="justify-content: flex-start;">
+<button type="button" class="quantity-btn">-</button>
+<span class="quantity-number">1</span>
+<button type="button" class="quantity-btn">+</button>
+</div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Nachricht (Optional)</label>
+<textarea name="message" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem; min-height: 100px; font-family: Arial, sans-serif;"></textarea>
+</div>
+</div>
+<!-- Payment Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 1rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Zahlung:</h4>
+<p style="margin-bottom: 1rem;"><strong>PayPal</strong></p>
+<p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">Nach dem Absenden erhalten Sie den PayPal-Zahlungslink per E-Mail innerhalb von Sekunden.</p>
+</div>
+<button type="submit" class="btn-buy" style="width: 100%;">PayPal Link Anfordern</button>
+<!-- Confirmation Message (hidden initially) -->
+<div id="meetgreetConfirmationMsg" style="display: none; background: #4CAF50; color: white; padding: 1rem; margin-top: 1rem; border-radius: 5px; text-align: center;">
+<strong>✓ Link angefordert!</strong>
+<p style="margin: 0.5rem 0 0 0;">Bitte warten Sie einige Sekunden. Sie erhalten den PayPal-Link und eine Bestellbestätigung per E-Mail.</p>
+</div>
+</form>
+</div>
+</section>
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h4>Shop</h4>
+<ul>
+<li><a href="#shop">Merchandise</a></li>
+<li><a href="#shop">Limited Editions</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Tickets</h4>
+<ul>
+<li><a href="#tickets">Konzerte</a></li>
+<li><a href="#tickets">VIP Pakete</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Service</h4>
+<ul>
+<li><a href="#">Kontakt</a></li>
+<li><a href="#">Support</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Legal</h4>
+<ul>
+<li><a href="#">Impressum</a></li>
+<li><a href="#">Datenschutz</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Unheilig Official Store. All rights reserved.</p>
+</div>
+</footer>
+<!-- Size Selection Modal -->
+<div id="sizeModal" class="modal">
+<div class="modal-content">
+<button class="modal-close" onclick="closeModal('sizeModal')">&times;</button>
+<h3 class="modal-title">Größe wählen</h3>
+<div class="size-grid">
+<button class="size-btn" onclick="selectSize(this)">S</button>
+<button class="size-btn" onclick="selectSize(this)">M</button>
+<button class="size-btn" onclick="selectSize(this)">L</button>
+<button class="size-btn" onclick="selectSize(this)">XL</button>
+<button class="size-btn" onclick="selectSize(this)">XXL</button>
+<button class="size-btn" onclick="selectSize(this)">3XL</button>
+<button class="size-btn" onclick="selectSize(this)">4XL</button>
+<button class="size-btn" onclick="selectSize(this)">5XL</button>
+</div>
+<button class="btn-buy" onclick="proceedToShipping()" style="width: 100%;">Weiter</button>
+</div>
+</div>
+<!-- Shipping Info Modal -->
+<div id="shippingModal" class="modal">
+<div class="modal-content">
+<button class="modal-close" onclick="closeModal('shippingModal')">&times;</button>
+<h3 class="modal-title">VERSANDKOSTEN</h3>
+<p>Der Versand erfolgt per DHL Paket.</p>
+<table class="shipping-table">
+<thead>
+<tr>
+<th>Land</th>
+<th>Standard</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Deutschland</td><td>5,95€</td></tr>
+<tr><td>Österreich</td><td>9,95€</td></tr>
+<tr><td>Schweiz</td><td>17,95€</td></tr>
+<tr><td>Belgien</td><td>9,95€</td></tr>
+<tr><td>Dänemark</td><td>12,95€</td></tr>
+<tr><td>Finnland</td><td>15,95€</td></tr>
+<tr><td>Frankreich</td><td>12,95€</td></tr>
+<tr><td>Island</td><td>25,95€</td></tr>
+<tr><td>Liechtenstein</td><td>25,95€</td></tr>
+<tr><td>Niederlande</td><td>8,95€</td></tr>
+<tr><td>Norwegen</td><td>15,95€</td></tr>
+<tr><td>Polen</td><td>12,95€</td></tr>
+<tr><td>Schweden</td><td>15,95€</td></tr>
+<tr><td>Spanien</td><td>12,95€</td></tr>
+<tr><td>Italien</td><td>12,95€</td></tr>
+<tr><td>Luxemburg</td><td>9,95€</td></tr>
+<tr><td>Portugal</td><td>15,95€</td></tr>
+<tr><td>Tschechien</td><td>9,95€</td></tr>
+</tbody>
+</table>
+<button class="btn-buy" onclick="proceedToMerchOrder()" style="width: 100%;">Weiter</button>
+</div>
+</div>
+<!-- Merchandise Order Modal -->
+<div id="merchOrderModal" class="modal">
+<div class="modal-content">
+<button class="modal-close" onclick="closeModal('merchOrderModal')">&times;</button>
+<h3 class="modal-title">Bestellung - Merchandise</h3>
+<div class="order-summary">
+<p><strong>Product</strong> x<span id="orderQuantity">1</span></p>
+<p><strong>Gesamt:</strong> €<span id="orderTotal">0.00</span></p>
+</div>
+<form id="merchOrderForm">
+<!-- Customer Information Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 2rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Ihre Daten:</h4>
+<div class="form-group">
+<label>Vorname *</label>
+<input type="text" name="firstname" required>
+</div>
+<div class="form-group">
+<label>Nachname *</label>
+<input type="text" name="lastname" required>
+</div>
+<div class="form-group">
+<label>E-Mail *</label>
+<input type="email" name="email" required>
+</div>
+<div class="form-group">
+<label>Telefon *</label>
+<input type="tel" name="phone" required>
+</div>
+</div>
+<!-- Shipping Address Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 2rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Versandadresse:</h4>
+<div class="form-group">
+<label>Straße *</label>
+<input type="text" name="street" required>
+</div>
+<div class="form-group">
+<label>PLZ *</label>
+<input type="text" name="zip" required>
+</div>
+<div class="form-group">
+<label>Stadt *</label>
+<input type="text" name="city" required>
+</div>
+<div class="form-group">
+<label>Land *</label>
+<select name="country" required>
+<option>Deutschland</option>
+<option>Österreich</option>
+<option>Schweiz</option>
+</select>
+</div>
+</div>
+<!-- Payment Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 1rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Zahlung:</h4>
+<p style="margin-bottom: 1rem;"><strong>PayPal</strong></p>
+<p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">Nach dem Absenden erhalten Sie den PayPal-Zahlungslink per E-Mail innerhalb von Sekunden.</p>
+</div>
+<button type="submit" class="btn-buy" style="width: 100%;">PayPal Link Anfordern</button>
+<!-- Confirmation Message (hidden initially) -->
+<div id="merchConfirmationMsg" style="display: none; background: #4CAF50; color: white; padding: 1rem; margin-top: 1rem; border-radius: 5px; text-align: center;">
+<strong>✓ Link angefordert!</strong>
+<p style="margin: 0.5rem 0 0 0;">Bitte warten Sie einige Sekunden. Sie erhalten den PayPal-Link und eine Bestellbestätigung per E-Mail.</p>
+</div>
+</form>
+</div>
+</div>
+<!-- Ticket Order Modal -->
+<div id="ticketOrderModal" class="modal">
+<div class="modal-content">
+<button class="modal-close" onclick="closeModal('ticketOrderModal')">&times;</button>
+<h3 class="modal-title">Bestellung - Tickets</h3>
+<div class="order-summary">
+<p><strong>Ticket</strong> x<span id="ticketQuantity">1</span></p>
+<p><strong>Gesamt:</strong> €<span id="ticketTotal">0.00</span></p>
+</div>
+<form id="ticketOrderForm">
+<!-- Delivery Method Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 2rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Zustellungsart wählen:</h4>
+<div style="margin-bottom: 1rem;">
+<label style="display: flex; align-items: center; padding: 1rem; background: white; border: 2px solid #ddd; border-radius: 5px; cursor: pointer; margin-bottom: 0.5rem;">
+<input type="radio" name="delivery_method" value="email" checked style="margin-right: 1rem; width: 20px; height: 20px;">
+<div>
+<strong>E-Mail Versand (KOSTENLOS)</strong>
+<p style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #666;">Ihre Tickets werden sofort per E-Mail zugeschickt</p>
+</div>
+</label>
+<label style="display: flex; align-items: center; padding: 1rem; background: white; border: 2px solid #ddd; border-radius: 5px; cursor: pointer;">
+<input type="radio" name="delivery_method" value="post" style="margin-right: 1rem; width: 20px; height: 20px;">
+<div>
+<strong>Postversand (+5,95€)</strong>
+<p style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #666;">Physische Tickets per Post (DHL)</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Customer Information Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 2rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Ihre Daten:</h4>
+<div class="form-group">
+<label>Vorname *</label>
+<input type="text" name="firstname" required>
+</div>
+<div class="form-group">
+<label>Nachname *</label>
+<input type="text" name="lastname" required>
+</div>
+<div class="form-group">
+<label>E-Mail *</label>
+<input type="email" name="email" required>
+</div>
+<div class="form-group">
+<label>Telefon *</label>
+<input type="tel" name="phone" required>
+</div>
+</div>
+<!-- Shipping Address Section (only for post delivery) -->
+<div id="ticketShippingAddress" style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 2rem; border-radius: 5px; display: none;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Versandadresse:</h4>
+<div class="form-group">
+<label>Straße *</label>
+<input type="text" name="street">
+</div>
+<div class="form-group">
+<label>PLZ *</label>
+<input type="text" name="zip">
+</div>
+<div class="form-group">
+<label>Stadt *</label>
+<input type="text" name="city">
+</div>
+<div class="form-group">
+<label>Land *</label>
+<select name="country">
+<option>Deutschland</option>
+<option>Österreich</option>
+<option>Schweiz</option>
+</select>
+</div>
+</div>
+<!-- Payment Section -->
+<div style="background: #f5f5f5; padding: 1.5rem; margin-bottom: 1rem; border-radius: 5px;">
+<h4 style="margin-bottom: 1rem; color: #c41e3a;">Zahlung:</h4>
+<p style="margin-bottom: 1rem;"><strong>PayPal</strong></p>
+<p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">Nach dem Absenden erhalten Sie den PayPal-Zahlungslink per E-Mail innerhalb von Sekunden.</p>
+</div>
+<button type="submit" class="btn-buy" style="width: 100%;">PayPal Link Anfordern</button>
+<!-- Confirmation Message (hidden initially) -->
+<div id="ticketConfirmationMsg" style="display: none; background: #4CAF50; color: white; padding: 1rem; margin-top: 1rem; border-radius: 5px; text-align: center;">
+<strong>✓ Link angefordert!</strong>
+<p style="margin: 0.5rem 0 0 0;">Bitte warten Sie einige Sekunden. Sie erhalten den PayPal-Link und eine Bestellbestätigung per E-Mail.</p>
+</div>
+</form>
+</div>
+</div>
+<script>
+let selectedSize = '';
+let currentProduct = { name: '', price: 0, quantity: 1 };
+let currentTicket = { name: '', price: 0, quantity: 1 };
+// Delivery Method Toggle for Tickets
+document.addEventListener('DOMContentLoaded', function() {
+const deliveryRadios = document.querySelectorAll('input[name="delivery_method"]');
+const shippingAddress = document.getElementById('ticketShippingAddress');
+const shippingFields = shippingAddress.querySelectorAll('input, select');
+deliveryRadios.forEach(radio => {
+radio.addEventListener('change', function() {
+if (this.value === 'post') {
+shippingAddress.style.display = 'block';
+// Make shipping fields required
+shippingFields.forEach(field => field.required = true);
+// Update total price
+updateTicketTotal(5.95);
+} else {
+shippingAddress.style.display = 'none';
+// Remove required from shipping fields
+shippingFields.forEach(field => field.required = false);
+// Update total price (remove shipping)
+updateTicketTotal(0);
+}
+});
+});
+});
+function updateTicketTotal(shippingCost) {
+const baseTotal = currentTicket.price * currentTicket.quantity;
+const newTotal = baseTotal + shippingCost;
+document.getElementById('ticketTotal').textContent = newTotal.toFixed(2);
+}
+// Modal Functions
+function openModal(modalId) {
+document.getElementById(modalId).style.display = 'block';
+}
+function closeModal(modalId) {
+document.getElementById(modalId).style.display = 'none';
+}
+// Close modal when clicking outside
+window.onclick = function(event) {
+if (event.target.classList.contains('modal')) {
+event.target.style.display = 'none';
+}
+}
+// Size Selection
+function selectSize(btn) {
+document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+btn.classList.add('selected');
+selectedSize = btn.textContent;
+}
+function proceedToShipping() {
+if (!selectedSize) {
+alert('Bitte wählen Sie eine Größe');
+return;
+}
+closeModal('sizeModal');
+openModal('shippingModal');
+}
+function proceedToMerchOrder() {
+closeModal('shippingModal');
+document.getElementById('orderQuantity').textContent = currentProduct.quantity;
+document.getElementById('orderTotal').textContent = (currentProduct.price * currentProduct.quantity).toFixed(2);
+openModal('merchOrderModal');
+}
+// Quantity Controls
+document.querySelectorAll('.quantity-btn').forEach(btn => {
+btn.addEventListener('click', function(e) {
+e.preventDefault();
+const parent = this.closest('.quantity-input');
+const quantitySpan = parent.querySelector('.quantity-number');
+let quantity = parseInt(quantitySpan.textContent);
+if (this.textContent === '+') {
+quantity++;
+} else if (this.textContent === '-' && quantity > 1) {
+quantity--;
+}
+quantitySpan.textContent = quantity;
+});
+});
+// Handle "Jetzt Kaufen" buttons for merchandise
+document.querySelectorAll('.merch-card .btn-buy').forEach((btn, index) => {
+btn.addEventListener('click', function(e) {
+e.preventDefault();
+const card = this.closest('.merch-card');
+const productName = card.querySelector('.merch-title').textContent;
+const productPrice = parseFloat(card.querySelector('.merch-price').textContent.replace('€', '').replace(',', '.'));
+const productQuantity = parseInt(card.querySelector('.quantity-number').textContent);
+currentProduct = {
+name: productName,
+price: productPrice,
+quantity: productQuantity
+};
+// Check if product is clothing (needs size selection)
+const category = card.querySelector('.merch-category').textContent;
+if (category.includes('COMEBACK') || category.includes('TOUR') || category.includes('HOODIE')) {
+openModal('sizeModal');
+} else {
+// Skip size selection for non-clothing items
+openModal('shippingModal');
+}
+});
+});
+// Handle "PRODUKT ANSEHEN" buttons
+document.querySelectorAll('.btn-view').forEach(btn => {
+btn.addEventListener('click', function(e) {
+e.preventDefault();
+const card = this.closest('.merch-card') || this.closest('.ticket-card') || this.closest('.concert-card');
+if (card) {
+card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+});
+});
+// Handle ticket "Jetzt Buchen" buttons
+document.querySelectorAll('.ticket-card .btn-buy').forEach((btn) => {
+btn.addEventListener('click', function(e) {
+e.preventDefault();
+const card = this.closest('.ticket-card');
+const ticketName = card.querySelector('h3').textContent;
+const ticketPrice = parseFloat(card.querySelector('.ticket-price').textContent.replace('€', '').replace(',', '.'));
+const ticketQuantity = parseInt(card.querySelector('.quantity-number').textContent);
+currentTicket = {
+name: ticketName,
+price: ticketPrice,
+quantity: ticketQuantity
+};
+document.getElementById('ticketQuantity').textContent = currentTicket.quantity;
+document.getElementById('ticketTotal').textContent = (currentTicket.price * currentTicket.quantity).toFixed(2);
+openModal('ticketOrderModal');
+});
+});
+// Handle concert "Tickets Kaufen" buttons
+document.querySelectorAll('.concert-card .btn-view').forEach(btn => {
+btn.addEventListener('click', function(e) {
+e.preventDefault();
+// Scroll to tickets section
+document.getElementById('tickets').scrollIntoView({ behavior: 'smooth' });
+});
+});
+// Form Submissions
+document.getElementById('merchOrderForm').addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form data using name attributes
+const form = this;
+const formData = {
+product_name: currentProduct.name,
+product_quantity: currentProduct.quantity,
+product_price: currentProduct.price,
+selected_size: selectedSize,
+total_price: (currentProduct.price * currentProduct.quantity).toFixed(2),
+customer_firstname: form.querySelector('input[name="firstname"]').value,
+customer_lastname: form.querySelector('input[name="lastname"]').value,
+customer_email: form.querySelector('input[name="email"]').value,
+customer_phone: form.querySelector('input[name="phone"]').value,
+customer_street: form.querySelector('input[name="street"]').value,
+customer_zip: form.querySelector('input[name="zip"]').value,
+customer_city: form.querySelector('input[name="city"]').value,
+customer_country: form.querySelector('select[name="country"]').value,
+order_type: 'Merchandise',
+to_email: form.querySelector('input[name="email"]').value // For customer receipt
+};
+// Show confirmation message immediately
+document.getElementById('merchConfirmationMsg').style.display = 'block';
+form.querySelector('button[type="submit"]').disabled = true;
+form.querySelector('button[type="submit"]').textContent = 'Wird gesendet...';
+// Send email via EmailJS
+emailjs.send('service_lxiogfo', 'template_xpry7ok', formData, 'sxxP29Pol7VasQJ70')
+.then(function(response) {
+console.log('SUCCESS!', response.status, response.text);
+// Keep confirmation message visible
+setTimeout(function() {
+closeModal('merchOrderModal');
+document.getElementById('merchOrderForm').reset();
+document.getElementById('merchConfirmationMsg').style.display = 'none';
+form.querySelector('button[type="submit"]').disabled = false;
+form.querySelector('button[type="submit"]').textContent = 'PayPal Link Anfordern';
+}, 3000);
+}, function(error) {
+console.log('FAILED...', error);
+document.getElementById('merchConfirmationMsg').style.display = 'none';
+form.querySelector('button[type="submit"]').disabled = false;
+form.querySelector('button[type="submit"]').textContent = 'PayPal Link Anfordern';
+alert('Es gab ein Problem beim Senden Ihrer Bestellung. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.');
+});
+});
+document.getElementById('ticketOrderForm').addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form data
+const form = this;
+const deliveryMethod = form.querySelector('input[name="delivery_method"]:checked').value;
+const shippingCost = deliveryMethod === 'post' ? 5.95 : 0;
+const totalPrice = (currentTicket.price * currentTicket.quantity) + shippingCost;
+const formData = {
+ticket_name: currentTicket.name,
+ticket_quantity: currentTicket.quantity,
+ticket_price: currentTicket.price,
+delivery_method: deliveryMethod === 'email' ? 'E-Mail (Kostenlos)' : 'Post (+5,95€)',
+shipping_cost: shippingCost.toFixed(2),
+total_price: totalPrice.toFixed(2),
+customer_firstname: form.querySelector('input[name="firstname"]').value,
+customer_lastname: form.querySelector('input[name="lastname"]').value,
+customer_email: form.querySelector('input[name="email"]').value,
+customer_phone: form.querySelector('input[name="phone"]').value,
+order_type: 'Ticket',
+to_email: form.querySelector('input[name="email"]').value // For customer receipt
+};
+// Add shipping address if post delivery
+if (deliveryMethod === 'post') {
+formData.customer_street = form.querySelector('input[name="street"]').value;
+formData.customer_zip = form.querySelector('input[name="zip"]').value;
+formData.customer_city = form.querySelector('input[name="city"]').value;
+formData.customer_country = form.querySelector('select[name="country"]').value;
+}
+// Show confirmation message immediately
+document.getElementById('ticketConfirmationMsg').style.display = 'block';
+form.querySelector('button[type="submit"]').disabled = true;
+form.querySelector('button[type="submit"]').textContent = 'Wird gesendet...';
+// Send email via EmailJS
+emailjs.send('service_lxiogfo', 'template_xpry7ok', formData, 'sxxP29Pol7VasQJ70')
+.then(function(response) {
+console.log('SUCCESS!', response.status, response.text);
+// Keep confirmation message visible
+setTimeout(function() {
+closeModal('ticketOrderModal');
+document.getElementById('ticketOrderForm').reset();
+document.getElementById('ticketConfirmationMsg').style.display = 'none';
+form.querySelector('button[type="submit"]').disabled = false;
+form.querySelector('button[type="submit"]').textContent = 'PayPal Link Anfordern';
+// Reset delivery method
+form.querySelector('input[name="delivery_method"][value="email"]').checked = true;
+document.getElementById('ticketShippingAddress').style.display = 'none';
+}, 3000);
+}, function(error) {
+console.log('FAILED...', error);
+document.getElementById('ticketConfirmationMsg').style.display = 'none';
+form.querySelector('button[type="submit"]').disabled = false;
+form.querySelector('button[type="submit"]').textContent = 'PayPal Link Anfordern';
+alert('Es gab ein Problem beim Senden Ihrer Bestellung. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.');
+});
+});
+document.getElementById('meetgreetForm').addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form data
+const form = this;
+const formData = {
+customer_firstname: form.querySelector('input[name="firstname"]').value,
+customer_lastname: form.querySelector('input[name="lastname"]').value,
+customer_email: form.querySelector('input[name="email"]').value,
+customer_phone: form.querySelector('input[name="phone"]').value,
+tour_date: form.querySelector('select[name="tour_date"]').value,
+number_of_persons: form.querySelector('.quantity-number').textContent,
+message: form.querySelector('textarea[name="message"]').value,
+order_type: 'Meet & Greet',
+to_email: form.querySelector('input[name="email"]').value // For customer receipt
+};
+// Show confirmation message immediately
+document.getElementById('meetgreetConfirmationMsg').style.display = 'block';
+form.querySelector('button[type="submit"]').disabled = true;
+form.querySelector('button[type="submit"]').textContent = 'Wird gesendet...';
+// Send email via EmailJS
+emailjs.send('service_lxiogfo', 'template_xpry7ok', formData, 'sxxP29Pol7VasQJ70')
+.then(function(response) {
+console.log('SUCCESS!', response.status, response.text);
+// Keep confirmation message visible
+setTimeout(function() {
+document.getElementById('meetgreetForm').reset();
+document.getElementById('meetgreetConfirmationMsg').style.display = 'none';
+form.querySelector('button[type="submit"]').disabled = false;
+form.querySelector('button[type="submit"]').textContent = 'PayPal Link Anfordern';
+}, 3000);
+}, function(error) {
+console.log('FAILED...', error);
+document.getElementById('meetgreetConfirmationMsg').style.display = 'none';
+form.querySelector('button[type="submit"]').disabled = false;
+form.querySelector('button[type="submit"]').textContent = 'PayPal Link Anfordern';
+alert('Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.');
+});
+});
+// Smooth scrolling for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth'
+});
+}
+});
+});
+</script>
+</body>
+</html>
