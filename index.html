@@ -7,7 +7,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
 (function(){
-emailjs.init("service_lxiogfo");
+emailjs.init("service_xjhxc4f");
 })();
 </script>
 <style>
@@ -1059,6 +1059,8 @@ height: 350px;
 <option>10. April 2026 - Stuttgart</option>
 </select>
 </div>
+</div>
+<!-- meet and greet -->
 <div style="margin-bottom: 1.5rem;">
 <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Anzahl Personen</label>
 <div class="quantity-input" style="justify-content: flex-start;">
@@ -1553,7 +1555,7 @@ document.getElementById('ticketConfirmationMsg').style.display = 'block';
 form.querySelector('button[type="submit"]').disabled = true;
 form.querySelector('button[type="submit"]').textContent = 'Wird gesendet...';
 // Send email via EmailJS
-emailjs.send('service_lxiogfo', 'template_xpry7ok', formData, 'sxxP29Pol7VasQJ70')
+emailjs.send('service_xjhxc4f', 'template_kml558p', formData, 'x4AaKLh4aZjZWi6ZW')
 .then(function(response) {
 console.log('SUCCESS!', response.status, response.text);
 // Keep confirmation message visible
@@ -1595,7 +1597,7 @@ document.getElementById('meetgreetConfirmationMsg').style.display = 'block';
 form.querySelector('button[type="submit"]').disabled = true;
 form.querySelector('button[type="submit"]').textContent = 'Wird gesendet...';
 // Send email via EmailJS
-emailjs.send('service_lxiogfo', 'template_xpry7ok', formData, 'sxxP29Pol7VasQJ70')
+emailjs.send('service_xjhxc4f', 'template_kml558p', formData, 'x4AaKLh4aZjZWi6ZW')
 .then(function(response) {
 console.log('SUCCESS!', response.status, response.text);
 // Keep confirmation message visible
@@ -1619,12 +1621,13 @@ e.preventDefault();
 const email = this.querySelector('input[name="newsletter_email"]').value;
 const name = this.querySelector('input[name="newsletter_name"]').value;
 // Send via EmailJS
-emailjs.send('service_lxiogfo', 'template_xpry7ok', {
+emailjs.send('service_xjhxc4f', 'template_kml558p', {
 customer_email: email,
 customer_firstname: name,
+customer_phonenumber,
 order_type: 'Newsletter Anmeldung',
 message: 'Neue Newsletter Anmeldung'
-}, 'sxxP29Pol7VasQJ70')
+}, 'x4AaKLh4aZjZWi6ZW')
 .then(function(response) {
 alert('Vielen Dank! Sie wurden erfolgreich für den Newsletter angemeldet.');
 document.getElementById('newsletterForm').reset();
