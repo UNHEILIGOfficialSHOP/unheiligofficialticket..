@@ -163,7 +163,8 @@ color: #c41e3a;
 font-weight: bold;
 font-size: 0.9rem;
 text-transform: uppercase;
-letter-spacing: 1px;margin-bottom: 0.5rem;
+letter-spacing: 1px;
+margin-bottom: 0.5rem;
 }
 .merch-title {
 color: #000;
@@ -516,19 +517,35 @@ height: 350px;
 </ul>
 </nav>
 </header>
-<section class="hero">
-<div class="hero-content">
-<h1>UNHEILIG COMEBACK TOUR 2026</h1>
-<p>Das Comeback - Wieder Zurück</p>
+<section class="hero" style="height: auto; min-height: 100vh; background: url('https://i.ibb.co/4nBXytRq/Whats-App-Image-2026-02-14-at-15-31-39.jpg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 4rem 2rem;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3);"></div>
+<div class="hero-content" style="position: relative; z-index: 1; padding: 2rem; max-width: 800px;">
+<h1 style="font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 1rem; color: #c41e3a; font-weight: bold; text-shadow: 3px 3px 6px rgba(0,0,0,0.5); letter-spacing: 2px;">LIEBE GLAUBE<br>MONSTER</h1>
+<p style="color: #000; font-size: clamp(1.2rem, 3vw, 1.8rem); margin: 2rem 0; font-weight: bold; background: rgba(245,245,220,0.9); padding: 1rem 2rem; display: inline-block;">Das neue Album ab 13. März 2026.</p>
+<div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+<button style="background: #000; color: #fff; border: none; padding: 1.2rem 3rem; font-size: clamp(1rem, 2.5vw, 1.3rem); font-weight: bold; text-transform: uppercase; cursor: pointer; width: 100%; max-width: 500px; letter-spacing: 1px; transition: all 0.3s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#000'">JETZT HIER ALBUM VORBESTELLEN</button>
+<button style="background: #c41e3a; color: #fff; border: none; padding: 1.2rem 3rem; font-size: clamp(1rem, 2.5vw, 1.3rem); font-weight: bold; text-transform: uppercase; cursor: pointer; width: 100%; max-width: 500px; letter-spacing: 1px; transition: all 0.3s;" onmouseover="this.style.background='#a01729'" onmouseout="this.style.background='#c41e3a'">JETZT HIER MERCH BESTELLEN</button>
 </div>
 </section>
-<section id="shop" class="section">
-<div class="balloon-header">
-<!-- TO ADD BALLOON IMAGE: Upload Screenshot_20260222-105253_Samsung_Internet.jpg to https://imgbb.com
-Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Musik" style="max-width: min(400px, 90vw); height: auto;"> -->
-<h2 class="balloon-text">Musik</h2>
-<p class="balloon-instruction">📸 Add balloon image here: Upload to imgbb.com</p>
+<!-- ===== BALLOONS - VERTICAL STACKED LIKE SCREENSHOT ===== -->
+<section style="background: #f5f5dc; padding: 0; margin: 0;">
+<div style="max-width: 100%; margin: 0;">
+<!-- Balloon 1: Musik - Full Width -->
+<div style="width: 100%; padding: 0; margin: 0;">
+<img src="/mnt/user-data/uploads/Screenshot_20260224-054309_Lite.jpg"style="width: 100%; height: auto; display: block; margin: 0; pointer-events: none; user-select: none;">
 </div>
+<!-- Balloon 2: Merch Bundle - Full Width -->
+<div style="width: 100%; padding: 0; margin: 0;">
+<img src="/mnt/user-data/uploads/Screenshot_20260224-032337_Lite.jpg"style="width: 100%; height: auto; display: block; margin: 0; pointer-events: none; user-select: none;">
+</div>
+<!-- Balloon 3: Ticket Bundle - Full Width -->
+<div style="width: 100%; padding: 0; margin: 0;">
+<img src="/mnt/user-data/uploads/Screenshot_20260224-032341_Lite.jpg"style="width: 100%; height: auto; display: block; margin: 0; pointer-events: none; user-select: none;">
+</div>
+</div>
+</section>
+<!-- ===== END BALLOONS ===== -->
+<section id="shop" class="section">
 <div class="merch-grid">
 <!-- Product 1 -->
 <div class="merch-card">
@@ -553,7 +570,7 @@ Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Musik" style="m
 <img src="https://i.ibb.co/1YsB9hjS/Whats-App-Image-2026-02-22-at-16-52-52-1.jpg" alt="Merchandise" class="merch-image">
 <div class="merch-info">
 <div class="merch-category">COMEBACK</div>
-<div class="merch-title">Hoodie</div>
+<div class="merch-title">cap</div>
 <div class="merch-price">€54,99</div>
 <div class="quantity-control">
 <div class="quantity-input">
@@ -833,13 +850,26 @@ Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Musik" style="m
 </div>
 </div>
 </section>
-<section id="tickets" class="section">
-<div class="balloon-header">
-<!-- TO ADD BALLOON IMAGE: Upload Screenshot_20260222-105323_Samsung_Internet.jpg to https://imgbb.com
-Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Ticket Bundle" style="max-width: min(400px, 90vw); height: auto;"> -->
-<h2 class="balloon-text">Ticket Bundle</h2>
-<p class="balloon-instruction">📸 Add balloon image here: Upload to imgbb.com</p>
+<!-- ===== NEWSLETTER SIGNUP BOX ===== -->
+<section style="background: #f5f5dc; padding: clamp(2rem, 4vw, 4rem) 1rem; margin: 2rem 0;">
+<div style="max-width: 700px; margin: 0 auto; background: #f5f5dc; border: 3px solid #000; padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2rem); text-align: center; box-shadow: 0 6px 15px rgba(0,0,0,0.2);">
+<h2 style="color: #c41e3a; font-size: clamp(1.8rem, 5vw, 3rem); font-weight: bold; margin-bottom: 1rem; line-height: 1.2; text-transform: uppercase;">VERPASSE NIE<br>WIEDER EINE<br>VERÖFFENTLICHUNG!</h2>
+<p style="color: #000; font-size: clamp(0.9rem, 2vw, 1.1rem); margin: 1.5rem 0; line-height: 1.6;">Melde dich hier für den Newsletter an um keine Neuigkeiten, Aktionen, Gewinnspiele und mehr von Unheilig zu verpassen!</p>
+<form id="newsletterForm" style="margin-top: 2rem;">
+<div style="margin-bottom: 1.5rem; text-align: left;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #000; font-size: clamp(0.9rem, 2vw, 1rem);">E-Mail *</label>
+<input type="email" name="newsletter_email" required placeholder="E-Mail *" style="width: 100%; padding: clamp(0.8rem, 2vw, 1rem); border: 2px solid #000; font-size: clamp(0.9rem, 2vw, 1rem); background: #fff; border-radius: 0;">
 </div>
+<div style="margin-bottom: 1.5rem; text-align: left;">
+<label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #000; font-size: clamp(0.9rem, 2vw, 1rem);">Vorname</label>
+<input type="text" name="newsletter_name" placeholder="Vorname" style="width: 100%; padding: clamp(0.8rem, 2vw, 1rem); border: 2px solid #000; font-size: clamp(0.9rem, 2vw, 1rem); background: #fff; border-radius: 0;">
+</div>
+<button type="submit" style="background: #c41e3a; color: #fff; border: none; padding: clamp(1rem, 2vw, 1.2rem) 3rem; font-size: clamp(1rem, 2vw, 1.1rem); font-weight: bold; text-transform: uppercase; cursor: pointer; width: 100%; margin-top: 1rem; transition: background 0.3s; letter-spacing: 1px;" onmouseover="this.style.background='#a01729'" onmouseout="this.style.background='#c41e3a'">ANMELDEN</button>
+</form>
+</div>
+</section>
+<!-- ===== END NEWSLETTER ===== -->
+<section id="tickets" class="section">
 <div class="tickets-grid">
 <div class="ticket-card">
 <h3>Standard</h3>
@@ -949,95 +979,8 @@ Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Ticket Bundle" 
 <button class="btn-view">Tickets Kaufen</button>
 </div>
 </section>
-<!-- ===== FEATURED PRODUCTS CAROUSEL ===== -->
-<section id="featured" style="background: #f5f5dc; padding: 3rem 0; margin: 2rem 0;">
-<div style="max-width: 1400px; margin: 0 auto; padding: 0 1rem;">
-<h2 style="text-align: center; font-size: clamp(2rem, 5vw, 3rem); color: #c41e3a; margin-bottom: 2rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Featured Products</h2>
-<div style="display: flex; gap: 2rem; overflow-x: auto; padding: 2rem 0.5rem; scrollbar-width: thin; scrollbar-color: #c41e3a #f5f5dc; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
-<!-- Featured 1: Vinyl Box -->
-<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
-<img src="https://i.ibb.co/MDmTgCbz/Whats-App-Image-2026-02-07-at-00-00-52.jpg" alt="Vinyl Box" style="width: 100%; height: 350px; object-fit: cover; display: block;">
-<div style="padding: 1.5rem; background: #f5f5dc;">
-<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Best of Unheilig Vinyl Box</h3>
-<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€79,99</p>
-<div style="background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #c41e3a;">
-<div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">-</button>
-<span class="quantity-number" style="font-weight: bold; font-size: 1.2rem; min-width: 30px; text-align: center;">1</span>
-<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">+</button>
-</div>
-</div>
-<button class="btn-buy" style="width: 100%; padding: 0.8rem; background: #c41e3a; color: #fff; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; font-size: 1rem;">Jetzt Kaufen</button>
-</div>
-</div>
-<!-- Featured 2: CD Bundle -->
-<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
-<img src="https://i.ibb.co/KxtxfFBV/bundel.jpg" alt="CD Bundle" style="width: 100%; height: 350px; object-fit: cover; display: block;"><div style="padding: 1.5rem; background: #f5f5dc;">
-<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">CD + 2 Tickets Bundle</h3>
-<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€195,99</p>
-<p style="color: #c41e3a; font-weight: bold; text-align: center; margin: 0.5rem 0; font-size: 1.1rem;">Leider ausverkauft</p>
-<p style="font-size: 0.9rem; text-align: center; margin-top: 1rem; line-height: 1.4;">LIEBE GLAUBE MONSTER<br>CD + 2 TICKETS</p>
-</div>
-</div>
-<!-- Featured 3 -->
-<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
-<img src="https://i.ibb.co/60gY88HF/Whats-App-Image-2026-02-22-at-23-30-46-1.jpg" alt="Special Edition" style="width: 100%; height: 350px; object-fit: cover; display: block;">
-<div style="padding: 1.5rem; background: #f5f5dc;">
-<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Special Edition</h3>
-<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€49,99</p>
-<div style="background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #c41e3a;">
-<div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">-</button>
-<span class="quantity-number" style="font-weight: bold; font-size: 1.2rem; min-width: 30px; text-align: center;">1</span>
-<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">+</button>
-</div>
-</div>
-<button class="btn-buy" style="width: 100%; padding: 0.8rem; background: #c41e3a; color: #fff; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; font-size: 1rem;">Jetzt Kaufen</button>
-</div>
-</div>
-<!-- Featured 4 -->
-<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
-<img src="https://i.ibb.co/203HPD06/Whats-App-Image-2026-02-22-at-23-30-46.jpg" alt="Limited Edition" style="width: 100%; height: 350px; object-fit: cover; display: block;">
-<div style="padding: 1.5rem; background: #f5f5dc;">
-<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Limited Edition</h3>
-<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€39,99</p>
-<div style="background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #c41e3a;">
-<div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">-</button>
-<span class="quantity-number" style="font-weight: bold; font-size: 1.2rem; min-width: 30px; text-align: center;">1</span>
-<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">+</button>
-</div>
-</div>
-<button class="btn-buy" style="width: 100%; padding: 0.8rem; background: #c41e3a; color: #fff; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; font-size: 1rem;">Jetzt Kaufen</button>
-</div>
-</div>
-<!-- Featured 5 -->
-<div style="min-width: min(350px, 85vw); scroll-snap-align: center; background: #fff; border: 3px solid #000; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.3); flex-shrink: 0;">
-<img src="https://i.ibb.co/CpSFHg64/Whats-App-Image-2026-02-22-at-23-30-45.jpg" alt="Exclusive Package" style="width: 100%; height: 350px; object-fit: cover; display: block;">
-<div style="padding: 1.5rem; background: #f5f5dc;">
-<h3 style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #c41e3a; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Exclusive Package</h3>
-<p style="font-size: clamp(1.5rem, 4vw, 2rem); color: #000; font-weight: bold; text-align: center; margin: 1rem 0;">€59,99</p>
-<div style="background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #c41e3a;">
-<div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">-</button>
-<span class="quantity-number" style="font-weight: bold; font-size: 1.2rem; min-width: 30px; text-align: center;">1</span>
-<button class="quantity-btn" style="background: #c41e3a; color: #fff; border: none; width: 35px; height: 35px; cursor: pointer; font-size: 1.3rem; font-weight: bold;">+</button>
-</div>
-</div>
-<button class="btn-buy" style="width: 100%; padding: 0.8rem; background: #c41e3a; color: #fff; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; font-size: 1rem;">Jetzt Kaufen</button>
-</div>
-</div>
-</div>
-</div>
-</section>
 <!-- ===== END FEATURED PRODUCTS ===== -->
 <section id="bundle" class="section">
-<div class="balloon-header">
-<!-- TO ADD BALLOON IMAGE: Upload Screenshot_20260222-105310_Samsung_Internet.jpg to https://imgbb.com
-Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Merch Bundle" style="max-width: min(400px, 90vw); height: auto;"> -->
-<h2 class="balloon-text">Merch Bundle</h2>
-<p class="balloon-instruction">📸 Add balloon image here: Upload to imgbb.com</p>
-</div>
 <div style="background: #fff; color: #000; padding: 2rem; border-radius: 10px; max-width: 800px; margin: 0 auto; border: 3px solid #000;">
 <h3 style="text-align: center; color: #c41e3a; margin-bottom: 1rem;">Vorbestellbar</h3>
 <img src="https://i.ibb.co/KxtxfFBV/bundel.jpg" alt="Bundle" style="width: 100%; max-width: 400px; display: block; margin: 2rem auto;">
@@ -1060,8 +1003,25 @@ Then replace the line below with: <img src="YOUR_IMAGE_URL" alt="Merch Bundle" s
 </div>
 </div>
 </section>
+<!-- ===== PRODUCT IMAGES - PURE DESIGN BEFORE MEET & GREET ===== -->
+<section style="background: #f5f5dc; padding: 0; margin: 0;">
+<div style="max-width: 100%; margin: 0;">
+<!-- Product Image 3 -->
+<div style="width: 100%; padding: 0; margin: 0;">
+<img src="https://i.ibb.co/60gY88HF/Whats-App-Image-2026-02-22-at-23-30-46-1.jpg" alt="Product Display" style="width: 100%; height: auto; display: block; margin: 0; pointer-events: none; user-select: none;">
+</div>
+<!-- Product Image 4 -->
+<div style="width: 100%; padding: 0; margin: 0;">
+<img src="https://i.ibb.co/203HPD06/Whats-App-Image-2026-02-22-at-23-30-46.jpg" alt="Product Display" style="width: 100%; height: auto; display: block; margin: 0; pointer-events: none; user-select: none;">
+</div>
+<!-- Product Image 5 -->
+<div style="width: 100%; padding: 0; margin: 0;">
+<img src="https://i.ibb.co/CpSFHg64/Whats-App-Image-2026-02-22-at-23-30-45.jpg" alt="Product Display" style="width: 100%; height: auto; display: block; margin: 0; pointer-events: none; user-select: none;">
+</div>
+</div>
+</section>
+<!-- ===== END PRODUCT IMAGES ===== -->
 <section id="meetgreet" class="section">
-<h2 class="section-title">Meet & Greet</h2>
 <div style="background: #fff; color: #000; padding: 2rem; border-radius: 10px; max-width: 600px; margin: 0 auto;">
 <form id="meetgreetForm">
 <!-- Customer Information Section -->
@@ -1651,6 +1611,25 @@ document.getElementById('meetgreetConfirmationMsg').style.display = 'none';
 form.querySelector('button[type="submit"]').disabled = false;
 form.querySelector('button[type="submit"]').textContent = 'PayPal Link Anfordern';
 alert('Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.');
+});
+});
+// Newsletter Form Handler
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const email = this.querySelector('input[name="newsletter_email"]').value;
+const name = this.querySelector('input[name="newsletter_name"]').value;
+// Send via EmailJS
+emailjs.send('service_lxiogfo', 'template_xpry7ok', {
+customer_email: email,
+customer_firstname: name,
+order_type: 'Newsletter Anmeldung',
+message: 'Neue Newsletter Anmeldung'
+}, 'sxxP29Pol7VasQJ70')
+.then(function(response) {
+alert('Vielen Dank! Sie wurden erfolgreich für den Newsletter angemeldet.');
+document.getElementById('newsletterForm').reset();
+}, function(error) {
+alert('Es gab ein Problem. Bitte versuchen Sie es erneut.');
 });
 });
 // Smooth scrolling for navigation
